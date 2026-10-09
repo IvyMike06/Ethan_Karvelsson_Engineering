@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Ethan Karvelsson</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Ethan Karvelsson</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.html">Resume</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </header>
+
+
+    <main class="container projects-page">
+
+        <h2>Engineering Projects</h2>
+
+    <figure class="project-figure">
+
+    <img src="images/DSC01920.JPG"
+         alt="Placeholder image for compound-turbo afterburning turbojet project">
+
+    <figcaption>
+        The Typheonix Engine.
+    </figcaption>
+
+    </figure>
+
+        <h3>[03/2025 - Current] Typheonix - A Compound-Turbocharger Based Afterburning Turbojet Engine</h3>
+
+        <p>
+            Typheonix is a small scale gas turbine engine that I am developing to study the physical
+            dynamics that govern gas turbines. I started designing and building this project because
+            I have had a strong desire to build a gas turbine engine for several years and I did not
+            have the resources to undertake such a project until I started planning and designing
+            Typheonix in March of 2025.
+            The Typheonix engine was designed to utilize two turbochargers from an automotive racing
+            application in a twin-spool, compound (or series) configuration. The reason this architecture
+            was chosen for the design is because turbochargers are optimized to run most efficiently in
+            a specific operating regime where variables like mass flow rate, pressure ratio, and intake
+            air temperaature line up. Running two turbochargers in series allows you to feed the compressed
+            air from the outlet of the first turbo's compressor (the low-pressure compressor) into the 
+            inlet to the second turbo's compressor (the high-pressure compressor) where the ratio the air 
+            is compressed at is compounded or multiplicative. This means that in a compound turbo
+            arrangement the compression ratio or pressure ratio possible with the system is much higher
+            than what is possible with a single turbo system. Additionally, a compound turbo configuration
+            with a low pressure turbo that is identical to the turbo in a single turbo system when compared
+            to the single turbo system, can run at a given mass flow and pressure ratio operating point 
+            significantly more thermodynamically efficent than the single turbo. This is because the operating
+            points of the low and high pressure compressors and turbines in the compound turbo system can run
+            at a more efficient operating condition for those specific components, whereas the single turbo
+            system may be outside the most efficient operating windows for it's components.
+            as the single turbo 
+            The main purpose I intend for Typheonix is to gain experience
+            and knowledge throught the planning, designing, building and testing phases of the project.
+            The Typheonix engine has been designed to maximize the efficiency of the system in a small 
+            window of operational conitions. The design was chosen to maximize the level of static
+            pressure after the low pressure turbine. The reason the design optimizes the static pressure
+            available after the turbine to be as high as possible is to maximize the pressure drop that
+            can be achieved at the nozzle which in turn creates a higher velocity in the gases exiting
+            the nozzle. Initial thermodynamic and flow calculations proved that with the two turbochargers 
+            used in my design, and including reasonable estimates for losses throughout the system that
+            the system should be able to create enough static pressure downstream of the low pressure
+            turbine and upstream of the exhaust nozzle to produce a choked flow condition in the nozzle
+            where the exhaust gases in the throat (the region of the nozzle with the smallest cross
+            section area) to reach their own speed of sound and transition into a supersonic flow regime.
+        </p>
+
+        <h4>High-Level Systems Design & Schematic Diagrams</h4>
+        
+        <p>
+            To gain a better understanding of the high-level overall design architecture
+            and how these design choices would be implemenented in the construction phases
+            of the project, I used the classic approach of writing out schematic diagrams
+            on pencil and paper. 
+        </p>
+
+        <p>
+            This is the schematic diagram of the "general plumbing" which details the air
+            and gas paths through the ducts connecting the turbochargers and the
+            combustion chamber (or combustor).
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/Typheonix Engine - General Plumbing Schematic.jpeg"
+             alt="General plumbing schematic">
+
+        <figcaption>
+            Basic air/gas path and system architecture schematic diagram.
+        </figcaption>
+
+        </figure>
+
+        <p>
+            This is the schematic diagram of the oil lubrication systems for the engine.
+            The engine has two independent oil lubrication systems, one for each turbocharger.
+            Because each oil system was designed to be tunable to the correct oil pressure and
+            flow rate, both systems are identical, even though the low-pressure and the
+            high-pressure turbo are different. The low and high pressure turbos only differ in
+            oil lubrication requirements in flow rate - the larger, low-pressure turbo needing
+            more oil flow than the smaller high-pressure turbo. Both the low-pressure and high- 
+            pressure turbo require identical oil pressure supply. Therefore, I chose to simplify
+            the design and contruction of the oil systems by using identical systems for each
+            turbocharger, that have the ability to be tuned to the requirements of each turbo.
+            Each oil circuit system includes a 3L reservoir, a positive displacement oil pump
+            powered by a 150W motor, a bypass circuit with a needle valve control that bypasses
+            oil after the oil pump back into the oil reservoir, an oil filter, an oil cooler with
+            two draw-through electric cooling fans per oil cooler unit, and finally, a pressure/ 
+            temperature junction to monitor the operational parameters of each oil circuit.
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/Typheonix Engine - Lubrication Systems Schematic.jpeg"
+             alt="Oil lubrication systems schematic">
+
+        <figcaption>
+            Oil lubrication systems schematic diagram.
+        </figcaption>
+
+        <p>
+            This schematic details the architecture of the fuel systems.
+            There are two independent fuel systems; the combustor fuel
+            system, and the afterburner fuel system. The combustor and
+            afterburner have two independent fuel systems because they
+            have very different fuel flow requirements. The afterburner
+            requires a much greater amount of fuel flow than the combustor
+            requires.
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/Typheonix Engine - Fuel Systems Schematic.jpeg"
+             alt="Fuel systems schematic">
+
+        <figcaption>
+            Fuel systems schematic diagram.
+        </figcaption>
+
+        <p>
+            Last fall I had a general mental model for how the combustion chamber
+            would be designed given the contraints from the system architecture
+            given the turbocharger dimensions, and the size of the ducts that
+            connect the turbos. I ended up finding a very good deal for six large
+            sheets of 1/8 inch thick 314 Stainless Steel on Facebook Marketplace.
+            I ended up purchasing this material and using the stainless sheet to
+            fabricate the combustion chamber pressure vessel cylinder and end caps.
+            I then did research and found the best thickness of the material to use
+            to fabricate the flame tube and the transition cone that connects
+            the end of the flame tube cylinder to the outlet pipe of the combustion 
+            chamber. I ended up choosing 16 gauge 304 Stainless Steel for the flame
+            tube construction mostly for ease of welding and fabrication. I purchased
+            the material for the flame tube at a local steel supplier - Pacific Steel.
+            After choosing and obtaining the material to construct the combustion chamber,
+            I created the design for the flame tube in SolidWorks, optimizing the geometry
+            for performance while still being possible to fabricate. Below is the
+            assembly drawing that I created using solidworks.
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/Typheonix Engine - Combustion Chamber Assembly Drawing.PNG"
+             alt="Combustion chamber assembly drawing">
+
+        <figcaption>
+            Combustion chamber assembly drawing.
+        </figcaption>
+
+        <h3>[05/2026 - Current] Typheonix Engine Combustor Ansys Fluent CFD Analysis</h3>
+
+        <figure class="project-figure">
+
+        <img src="images/Typheonix Engine Combustor Ansys Fluent CFD Velocity Vector Field.png"
+             alt="Typheonix Engine Combustor CFD">
+
+        <figcaption>
+            Typheonix Engine Combustor Ansys Fluent CFD Velocity Vector Field.
+        </figcaption>
+
+
+        <p>
+            I used the SolidWorks CAD model for the combustion chamber of the Typheonix engine
+            and Ansys Fluent software to model the control volume of air inside the combustion
+            chamber of the Typheonix engine. I spent many many hours learing to use the Ansys
+            Software and learn what input parameters needed to be specified. The first successful
+            CFD simulation study I ran was just a steady state "dry" flow simulation, where I did 
+            not model any fuel flow or combustion in the chamber. I created the simulation to study
+            the airflow patterns through the Typheonix combustion chamber and to set up the ground 
+            work to run more complicated reacting flow and transient simulations in the future.
+        </p>
+
+        <h3>[10/16/2025 - 10/26/2025] MATLab Compressor Performance Analysis</h3>
+
+        <p>
+            Python and MATLAB analysis of compressor performance maps.
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/BorgWarner S252SX-E Compressor Power Surface Plot.png"
+         alt="Placeholder for engineering analysis plot">
+
+        <figcaption>
+        3D Compressor Power Surface MATLab Plot from a BorgWarner S476SX-E Turbocharger.
+        </figcaption>
+
+        <h3>[05/2025 - 12/2025] Gt3582 Turbocharger SolidWorks CAD Model</h3>
+
+        <figure class="project-video">
+
+        <video muted playsinline>
+            <source src="videos/Gt-3582 Turbocharger Assembly Spin Animation.mp4" type="video/mp4">
+             Your browser does not support the video element.
+        </video>
+
+        <figcaption>
+            Gt-3582 turbocharger SolidWorks model spin animation.
+        </figcaption>
+
+        </figure>
+
+        <figure class="project-figure">
+
+        <img src="images/Gt-3582 Turbocharger Assembly Cutaway View 1.JPG"
+             alt="Gt-3582 Turbocharger Assembly Cutaway View 1">
+
+        <figcaption>
+            Gt-3582 Turbocharger Solidworks Model Cutaway View.
+        </figcaption>
+
+        <p>
+            In this project, I created an extremely detailed SolidWorks
+            Model of a MaXpeedingRods Gt3582 turbocharger. I create this
+            model by completely dissasembling the Gt3582 turbocharger I had,
+            and taking each component and measuring every possible feature
+            that was possible to measure on that particilar component, and 
+            creating a part model for that component in SolidWorks. I then
+            repeated this for every component in the turbocharger, and created
+            an assembly and a motion animation in SolidWorks. I learned many
+            tools, features, and idiosynchrosies about SolidWorks throughout
+            the process of this project. I ran into quite a few issues creating
+            certain parts and creating the assembly file for this project that
+            took many months to troubleshoot and solve. 
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/Gt-3582 Turbocharger Assembly Cutaway View 2.JPG"
+             alt="Gt-3582 Turbocharger Assembly Cutaway View 2">
+
+        <figcaption>
+            Gt-3582 Turbocharger Solidworks Model Cutaway View.
+        </figcaption>
+
+        <figure class="project-video">
+
+        <video muted playsinline>
+            <source src="videos/Gt-3582 Turbocharger Assembly Explode.mp4" type="video/mp4">
+             Your browser does not support the video element.
+        </video>
+
+        <figcaption>
+            Gt-3582 turbocharger SolidWorks model explode animation.
+        </figcaption>
+
+        <h3>[10/2024 - 12/2024] 3-Channel High Power Capacity Electric Control Box</h3>
+
+        <p>
+            3-channel analog electric control box, design to safely switch on and off
+            three different circuit channels. Channel 1 is rated to conduct up to
+            5,000 watts at up to 240 volts of electricity. Channel 2 is also rated to 
+            conduct up to 5,000 watts at up to 240 volts of electricity. Channel 3 is
+            rated to conduct up 10,000 watts at up to 240 volts.
+        </p>
+
+        <figure class="project-figure">
+
+        <img src="images/3-Channel Analog Electric Control Box.JPG"
+             alt="3-Channel analog electric control box">
+
+        <figcaption>
+            3-Channel high-power capacity analog electric control box.
+        </figcaption>
+
+        <figure class="project-figure">
+
+        <img src="images/3-Channel Analog Electric Control Box Wiring.jpeg"
+             alt="3-Channel analog electric control box wiring">
+
+        <figcaption>
+            Wiring underneath the "hood".
+        </figcaption>
+
+        <h3>[12/2024] High Voltage Power Supply & Capacitor Bank</h3>
+
+        <p>
+            4400V DC power supply with an integrated capacitor bank to provide
+            high voltage, high power pulsed DC electricity.
+        </p>
+
+        <h3>
+
+        </h3>
+
+    </main>
+
+<script>
+    const videos = document.querySelectorAll(".project-video video");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            const video = entry.target;
+
+            if (entry.isIntersecting) {
+
+                video.currentTime = 0;
+                video.play();
+
+            } else {
+
+                video.pause();
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.5
+    });
+
+    videos.forEach(video => {
+        observer.observe(video);
+    });
+</script>
+
+</body>
+
+</html>
